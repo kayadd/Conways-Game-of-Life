@@ -1,0 +1,27 @@
+/*
+Setzt die Breite des Rahmens auf 1075 Pixel.
+Setzt die Höhe des Rahmens auf 740 Pixel
+
+Koordinaten des Rahmens:
+  300 Pixel <= x <= 1375 Pixel
+   28 Pixel <= y <= 768  Pixel
+
+Setzt den Rahmenstil auf eine durchgezogene Linie der Farbe Schwarz.
+*/
+#box{
+    border-style: solid;
+    border-color: black;
+    margin-top: -250px;
+    margin-left: 300px;
+    height: 740px;
+    width: 1080px;
+}
+
+/*
+Setzt Die Breite und Höhe jedes Quadrates auf 20 Pixel.
+*/
+.square{
+    background-color: black;
+    height: 20px;
+    width: 20px;
+}
