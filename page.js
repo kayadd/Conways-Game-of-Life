@@ -4,64 +4,57 @@
 let state = 0;
 
 // Initialisiert die neue Squareliste.
-let xSquares = [];
-let squares = [];
+let squares = new Array(54);
 
-// Initialisiert jede Zelle als Zelle mit weißem Hintergrund.
-for(let rows = 0; rows < 54; rows++) {
-    xSquares.push(0);
+// Initialisiert einen zweidimensionalen Array.
+for (var i = 0; i < squares.length; i++) {
+    squares[i] = new Array(38).fill(0);
 }
 
-for(let columns = 0; columns < 38; columns++) {
-    squares.push(xSquares);
-}
-
+// Displayed den gesamten zweidimensionalen Array.
 function graph(){
+    console.log(squares);
     const canvas = document.getElementById("box");
     const ctx = canvas.getContext("2d");
 
-    for(let rows = 0; rows < 54 ; rows++) {
-        for(let columns = 0; columns < 38 ; columns++) {
-            ctx.fillStyle = "white";
-            if (squares[columns][rows] == 1)
-            {
+    for(var i = 0; i < 54; i++){
+        for(var j = 0; j < 38; j++){
+            c = squares[i][j]
+            if(c == 1){
                 ctx.fillStyle = "black";
+            }else{
+                ctx.fillStyle = "white";
             }
 
-            ctx.fillRect(20*rows, 20*columns, 20, 20);
+            ctx.fillRect(20*i, 20*j, 20, 20);
 
         }
     }
 }
 
+
+
 // Wenn auf den Bildschirm geklickt wird, wird diese Funktion aufgerufen.
 function OnClick(event) {
+    // Speichert den Offset des Canvas und verschiebt die Quadrate gegebenenfalls.
+    let OffsetX = -8;
+    let OffsetY = -8;
     // Speichert die X-Koordinate in der Variable xCourser.
-    let xCourser = event.clientX;
+    let xCourser = event.clientX + OffsetX;
     // Speichert die Y-Koordinate in der Variable yCounter.
-    let yCourser = event.clientY;
+    let yCourser = event.clientY + OffsetY;
 
     // Wenn der Cursor innerhalb dieser Box ist:
-    if ((0 <= xCourser && xCourser <= 1080) && (0 <= yCourser && yCourser <= 760 ))
+    if ((0 <= xCourser <=1080 ) && (0<= yCourser <=760))
     {   // Formatiert die neuen Koordinaten des Quadrates.
         idx = (xCourser - (xCourser % 20))/(20);
         idy = (yCourser - (yCourser % 20))/(20);
 
-        if (squares[idx][idy] == 0)
-        {
-            squares[idx][idy] = 1;
-        } else
-        {
-            squares[idx][idy] = 0;
-        }
+        // Ändert die Farbe des Squares.
+        squares[idx][idy] = 2-2**(squares[idx][idy]);
     }
 
     graph();
 }
 
 document.addEventListener("click", OnClick);
-
-
-
-
-
