@@ -1,11 +1,23 @@
 /*
-Setzt die Breite des Rahmens auf 1075 Pixel.
-Setzt die Höhe des Rahmens auf 740 Pixel
+Legt die Schriftart fest.
+*/
+body{
+font-family: 'Oswald', sans-serif;
+}
 
-Koordinaten des Rahmens:
-  300 Pixel <= x <= 1375 Pixel
-   28 Pixel <= y <= 768  Pixel
+/*
+Setzt die Koordinaten und das Aussehen jedes Elements Buttons "Feld zurücksetzen" fest.
+*/
+.Button{
+    width: 200px;
+    height: 50px;
+    border: 2px solid black;
 
+    text-align: center;
+    line-height: 50px;
+}
+
+/*
 Setzt den Rahmenstil auf eine durchgezogene Linie der Farbe Schwarz.
 */
 #box{
@@ -13,5 +25,20 @@ Setzt den Rahmenstil auf eine durchgezogene Linie der Farbe Schwarz.
 }
 
 /*
-Setzt Die Breite und Höhe jedes Quadrates auf 20 Pixel.
+Legt die Positionen der Elemente fest
 */
+#clearButton{
+    position: relative;
+    left: 1125px;
+    bottom: 700px;
+
+}
+
+#nameTag{
+    position: relative;
+    left: 1125px;
+    bottom: 800px;
+
+    font-size: 25px;
+    border: 1px solid white;
+}

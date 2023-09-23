@@ -19,7 +19,7 @@ function graph(){
 
     for(var i = 0; i < 54; i++){
         for(var j = 0; j < 38; j++){
-            c = squares[i][j]
+            c = squares[i][j];
             if(c == 1){
                 ctx.fillStyle = "black";
             }else{

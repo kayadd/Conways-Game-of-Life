@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--Adds the new font from the google-font-manager -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
     <meta charset="UTF-8">
     <title>Conways Spiel des Lebens</title>
     <script src="page.js"></script>
@@ -9,20 +14,15 @@
 </head>
 <body>
 
-<p id="rules">  <h3>Die Spielregeln: </h3>
-        Eine lebende Zelle, die weniger <br>
-        als zwei lebende Nachbarn hat, <br>
-        stirbt in der Folgegeneration. <br> <br>
-        Eine lebende Zelle, die zwei <br>
-        oder drei lebende Nachbarn hat, <br>
-        bleibt in der Folgegeneration erhalten. <br> <br>
-        Eine Zelle, die mehr <br>
-        als drei lebenden Nachbarn hat, <br>
-        stirbt in der Folgegeneration oder bleibt tot. <br>
-</p>
-
+<!-- Canvas -->
 <canvas id="box" width="1080" height="760">
 </canvas>
+
+<!-- Button zum zurücksetzen des Feldes -->
+<div id="clearButton" class="Button"> Feld zurücksetzen </div>
+
+<!-- Button zum zurücksetzen des Feldes -->
+<div id="nameTag" > Conways Spiel des Lebens </div>
 
 </body>
 </html>
